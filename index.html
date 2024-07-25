@@ -4,30 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ranking</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
         * {
             padding: 0;
             margin: 0;
+            font-family: "Montserrat", sans-serif;
+
         }
 
         body {
             background-color: #000000;
+            background-image: url("https://res.cloudinary.com/dcyrneauz/image/upload/v1721843080/IMG_Fundo_5_caqeon.png");
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: 100% 155%;
         }
 
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             max-width: 390px;
             margin: 0 auto;
             padding: 20px;
             height: 100vh;
-            background-image: url("https://res.cloudinary.com/dcyrneauz/image/upload/v1721843080/IMG_Fundo_5_caqeon.png");
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            background-size: 140% 155%;
             position: relative;
 
         }
@@ -164,6 +171,12 @@
             .logo {
                 left: 40%
             }
+
+        }
+        .load{
+            color:white;
+            align-self: center;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -184,11 +197,6 @@
         <h1 class="title">Ranking Oficial do Desafio 10K: Veja os Líderes na Jornada de 1K a 10K</h1>
 
         <div class="ranking">
-            <div class="players">
-                <div class="img_box"></div>
-                <h4 class="name">Lorem ipsumlorem</h4>
-                <h4 class="value">1000</h4>
-            </div>
 
 
         </div>
@@ -260,7 +268,7 @@
                 imgContainer.innerText = `${position}º`
             )
             playerName.innerText = ranking.nome
-            playerValue.innerText = ranking.total_deposit
+            playerValue.innerText = `R$ ${ranking.total_deposit}`
 
             players.append(imgContainer, playerName, playerValue)
 
@@ -270,18 +278,19 @@
         const renderPlayer = async () => {
             const ranking = document.querySelector(".ranking")
 
-            ranking.innerHTML = ""
+            ranking.innerHTML=" <h4 class='load'>Carregando...</h4>"
 
             const rankings = await getRankings()
 
-            rankings.forEach((e, index) => {
-                const position = index + 1
-                const player = createRanking(e, position)
-
-                ranking.appendChild(player)
-
-            });
-        }
+                
+            ranking.innerHTML=''
+                rankings.forEach((e, index) => {
+                    const position = index + 1
+                    const player = createRanking(e, position)
+                    ranking.appendChild(player)
+                    
+                });
+            }
 
         renderPlayer()
     </script>
