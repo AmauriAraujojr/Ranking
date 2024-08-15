@@ -20,49 +20,49 @@
 
         body {
             background-color: #000000;
-            background-image: url("https://res.cloudinary.com/dcyrneauz/image/upload/v1721843080/IMG_Fundo_5_caqeon.png");
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            background-size: 100% 155%;
+         display: flex;
+         height: 100vh;
+         background-image: url('https://res.cloudinary.com/dcyrneauz/image/upload/v1723749266/IMG_Fundo_16_vgz96l.png');
+         background-position: center;
+         background-size: cover;
         }
 
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            max-width: 390px;
-            margin: 0 auto;
-            padding: 20px;
-            height: 100vh;
+            width: 100%;
+            padding: 20px 0;
+            max-width: 1062px;
             position: relative;
+            margin: 0 auto;
+            gap:20px;
 
         }
 
         .title {
             font-family: Bree, sans-serif;
             text-transform: uppercase;
-            text-align: center;
             font-weight: 700;
             color: #EDEDED;
-            font-size: 1.325rem;
-            margin-top: 100px;
-            max-width: 100%;
+            font-size: 1.25rem;
+            text-align: center;
+            align-self: center;
 
         }
 
         .ranking {
-            width: 100%;
+            width: 90%;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-top: 20px;
+        max-width: 730px;
         }
 
         .players {
             width: 100%;
             max-width: 100%;
-
+border-radius: 15px;
             height: 42px;
             border: 1px solid #063BBB;
             display: flex;
@@ -83,6 +83,7 @@
             font-size: 20px;
             font-weight: 800;
             color:#D4D4D4;
+            border-radius: 15px 0 0 15px;
         }
 
         .value {
@@ -123,78 +124,123 @@
 
         .logo {
             position: absolute;
-            top: 3px;
-            left: 30%;
-            width: 180px;
+            width: 101px;
+            top:-30px;
         }
 
         footer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            background-color: #001E68;
+            border-radius: 0 0 20px 20px ;
             width: 100%;
-            height: 58px;
-            color: #EDEDED;
-            margin-top: 20px;
-            margin-bottom: 20px;
-
+            height: 115px;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            box-sizing: content-box;
+            gap: 10px;
+color: #EDEDED;
         }
 
         footer h4 {
-            width: 60%;
             text-align: center;
-            background-color: #6D1114;
-            border-radius: 3px;
-            padding: 5px;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 1.3rem;
 
         }
 
         footer h3 {
-            font-weight: 700;
-            font-size: 18px;
+            font-weight: 500;
+            font-size: 12px;
             font-style: italic;
+            text-align: center;
         }
 
-        @media(min-width:730px) {
-            main {
-                max-width: 730px;
-            }
-
-            .center_ligth {
-                left: 40%
-            }
-
-            .logo {
-                left: 40%
-            }
-
-        }
         .load{
             color:white;
             align-self: center;
             font-size: 30px;
         }
+        
+        .title_box{
+            background-color: #001E68;
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 115px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: content-box;
+            flex-direction: column;
+            position: relative;
+        }
+        @media(min-width:957px) {
+          
+
+            .title_box{
+                flex-direction: row;
+                align-items: start;
+
+            }
+            .logo{
+                position:unset ;
+                width: 157px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        }
+        .taca{
+            
+            max-width: 141.61px;
+        }
+        @media(min-width:725px){
+            .taca{
+position: absolute;   
+left: 0;         }
+
+footer h4{
+
+    font-size: 1.75rem;
+}
+footer h3{
+    font-size: 1rem;
+}
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+        }
+
+        @media(min-width:1050px){
+            .taca{
+                max-width: 359.46px;
+                left:-115px;
+                bottom: 0px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <img class="left_ligth" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845331/Luz_1_a3qn79.png" alt=""
+    <!-- <img class="left_ligth" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845331/Luz_1_a3qn79.png" alt=""
         srcset="">
     <img class="right_ligth" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845331/Luz_1_a3qn79.png" alt=""
-        srcset="">
+        srcset=""> -->
 
     <main>
-        <img class="center_ligth" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845331/Luz_1_a3qn79.png"
-            alt="" srcset="">
+        <!-- <img class="center_ligth" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845331/Luz_1_a3qn79.png"
+            alt="" srcset=""> -->
 
-        <img class="logo"
-            src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845211/Football_Studio_2_csc0pj.png" alt=""
-            srcset="">
-        <h1 class="title">Ranking Oficial do Desafio 10K: Veja os Líderes na Jornada de 1K a 10K</h1>
+            
+            <div class="title_box">
+                <img class="logo"
+                    src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845211/Football_Studio_2_csc0pj.png" alt=""
+                    srcset="">
+
+                <h1 class="title">Ranking Oficial Sniper: Veja os Líderes do Torneio na Jornada a R$5.000!</h1>
+            </div>
 
         <div class="ranking">
 
@@ -202,10 +248,13 @@
         </div>
 
         <footer>
-            <h4>O torneio vai até 31/07.
-            </h4>
-            <h3>Mantenha-se no topo para ganhar!</h3>
+            <img  class="taca"src="https://res.cloudinary.com/dcyrneauz/image/upload/v1723749200/GOL_DE_OURO_1_thdjzv.png" alt="" srcset="">
+           <div class="content">
 
+               <h4>O torneio vai até 25/08.
+               </h4>
+               <h3>Continue jogando e mantenha-se no topo para garantir sua vitória!</h3>
+           </div>
         </footer>
 
     </main>
@@ -260,10 +309,7 @@
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933366/Bronze_byixfi.png"
                 imgContainer.appendChild(playerImg)
             }
-            else if (position == 4) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933485/4o_Lugar_nqkget.png"
-                imgContainer.appendChild(playerImg)
-            }
+         
             else (
                 imgContainer.innerText = `${position}º`
             )
@@ -292,7 +338,7 @@
                 });
             }
 
-        renderPlayer()
+         renderPlayer()
     </script>
 
 </body>
