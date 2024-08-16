@@ -331,7 +331,7 @@ justify-content: center;
 
         }
 
-        const createRanking = (ranking, position) => {
+        const createRanking = (ranking, position,first) => {
             const players = document.createElement("div")
             const imgContainer = document.createElement("div")
             const playerImg = document.createElement("img")
@@ -343,15 +343,15 @@ justify-content: center;
             playerName.classList.add("name")
             playerValue.classList.add("value")
 
-            if (position == 1) {
+            if (position == 1 && first) {
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814648/OURO_ltzpyf.png"
                 imgContainer.appendChild(playerImg)
             }
-            else if (position == 2) {
+            else if (position == 2 && first) {
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814660/PRATA_ndbmj3.png"
                 imgContainer.appendChild(playerImg)
             }
-            else if (position == 3) {
+            else if (position == 3 && first) {
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814678/BRONZE_jlbj0r.png"
                 imgContainer.appendChild(playerImg)
             }
@@ -381,7 +381,7 @@ justify-content: center;
                 rankings.forEach((e, index) => {
                     const position = e.position
                     if (e.position <= 10) {
-                        const player = createRanking(e, position)
+                        const player = createRanking(e, position,first)
                         ranking.appendChild(player)
                     }
                     
@@ -391,10 +391,9 @@ justify-content: center;
             else{
                 array.forEach((e, index) => {
                     const position = e.position
-                    if (e.position <= 10) {
-                        const player = createRanking(e, position)
+                        const player = createRanking(e, position,false)
                         ranking.appendChild(player)
-                    }
+                    
                     
                 });
             }
