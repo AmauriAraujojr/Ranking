@@ -7,8 +7,9 @@
     <title>Ranking</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <style>
         * {
@@ -20,11 +21,12 @@
 
         body {
             background-color: #000000;
-         display: flex;
-         height: 100vh;
-         background-image: url('https://res.cloudinary.com/dcyrneauz/image/upload/v1723749266/IMG_Fundo_16_vgz96l.png');
-         background-position: center;
-         background-size: cover;
+            display: flex;
+            height: 100vh;
+            background-image: url('https://res.cloudinary.com/dcyrneauz/image/upload/v1723811917/IMG_Fundo_17_l4y6tm.png');
+            background-position: center;
+            background-size: cover;
+            color: #D4D4D4;
         }
 
         main {
@@ -36,7 +38,7 @@
             max-width: 1062px;
             position: relative;
             margin: 0 auto;
-            gap:20px;
+            gap: 20px;
 
         }
 
@@ -44,54 +46,108 @@
             font-family: Bree, sans-serif;
             text-transform: uppercase;
             font-weight: 700;
-            color: #EDEDED;
-            font-size: 1.25rem;
+            color: #FFD230;
+            font-size: 1.45rem;
             text-align: center;
             align-self: center;
+            font-style: italic;
 
         }
+        .input_box{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 730px;
+            align-items: center;
+        }
+        input{
+            padding: 10px 5px;
+            width: 260px;
+            border-radius: 12px 0 0 12px;
+            border: 1px solid #E50539;
+            background-color: #0C0C0C;
+            color: #D4D4D4;
+            max-width: 100%;
+        }
+        input::placeholder{
+      color:#D4D4D4;
+    }
+        input:focus{
+            outline: none;
+            
+        }
+        input:focus::-webkit-input-placeholder{
+            color: transparent;
+        }
 
+        button{
+            background-color:#E50539;
+padding: 10px;
+border-radius:0 12px 12px 0;
+display: flex;
+align-items: center;
+border: 1px solid #E50539;
+color: #EDEDED;
+        }
+.submit_box{
+    display: flex;
+    max-width: 100%;
+}
         .ranking {
             width: 90%;
             display: flex;
             flex-direction: column;
             gap: 10px;
-        max-width: 730px;
+            max-width: 730px;
         }
 
         .players {
             width: 100%;
             max-width: 100%;
-border-radius: 15px;
-            height: 42px;
-            border: 1px solid #063BBB;
+            border-radius: 50px;
+            height: 47px;
             display: flex;
             align-items: center;
             position: relative;
             gap: 30px;
             color: #EDEDED;
-            background: radial-gradient(#17347A 2%, #000000 75%);
+            background: #0C0C0C;
+
         }
 
         .img_box {
-            width: 51px;
-            height: 100%;
-            background-color: #17347A;
+            width: 45px;
+            height: 45px;
+            background-color:#E50539;
             display: flex;
-            align-items:center ;
+            align-items: center;
             justify-content: center;
             font-size: 20px;
             font-weight: 800;
-            color:#D4D4D4;
-            border-radius: 15px 0 0 15px;
+            color: #D4D4D4;
+            border-radius: 50px ;
+            margin: 3px;
         }
 
         .value {
             position: absolute;
-            right: 15px;
+            right:0;
+            background-color:#E50539;
+width: 25%;
+height: 40px;
+border-radius: 50px;
+display: flex;
+align-items: center;
+padding: 5px;
 
         }
+@media(min-width:540px){
+    .value{
+justify-content: center;
 
+    }
+}
         .center_ligth {
             position: absolute;
             top: 0;
@@ -125,20 +181,20 @@ border-radius: 15px;
         .logo {
             position: absolute;
             width: 101px;
-            top:-30px;
+            top: -30px;
         }
 
         footer {
-            background-color: #001E68;
-            border-radius: 0 0 20px 20px ;
+            border-radius: 0 0 20px 20px;
             width: 100%;
             height: 115px;
             display: flex;
-            align-items:center;
+            align-items: center;
             justify-content: center;
             box-sizing: content-box;
             gap: 10px;
-color: #EDEDED;
+            color: #EDEDED;
+            position: relative;
         }
 
         footer h4 {
@@ -149,19 +205,22 @@ color: #EDEDED;
         }
 
         footer h3 {
-            font-weight: 500;
-            font-size: 12px;
-            font-style: italic;
+            font-weight: 600;
+            font-size: 1rem;
             text-align: center;
         }
 
-        .load{
-            color:white;
+        .date {
+            color: #FFD230;
+        }
+
+        .load {
+            color: white;
             align-self: center;
             font-size: 30px;
         }
-        
-        .title_box{
+
+        .title_box {
             background-color: #001E68;
             border-radius: 20px 20px 0 0;
             width: 100%;
@@ -173,16 +232,18 @@ color: #EDEDED;
             flex-direction: column;
             position: relative;
         }
-        @media(min-width:957px) {
-          
 
-            .title_box{
+        @media(min-width:957px) {
+
+
+            .title_box {
                 flex-direction: row;
                 align-items: start;
 
             }
-            .logo{
-                position:unset ;
+
+            .logo {
+                position: unset;
                 width: 157px;
                 display: flex;
                 align-items: center;
@@ -190,34 +251,19 @@ color: #EDEDED;
             }
 
         }
-        .taca{
-            
-            max-width: 141.61px;
+
+        .taca {
+
+            max-width: 183px;
+            position: absolute;
+            left: -40px;
+            bottom: -45px;
         }
-        @media(min-width:725px){
+        @media(min-width:950px){
             .taca{
-position: absolute;   
-left: 0;         }
-
-footer h4{
-
-    font-size: 1.75rem;
-}
-footer h3{
-    font-size: 1rem;
-}
-        }
-        .content{
-            display: flex;
-            flex-direction: column;
-            gap:10px;
-        }
-
-        @media(min-width:1050px){
-            .taca{
-                max-width: 359.46px;
-                left:-115px;
-                bottom: 0px;
+                max-width:285px ;
+                left: -100px;
+                bottom: 0;
             }
         }
     </style>
@@ -233,34 +279,34 @@ footer h3{
         <!-- <img class="center_ligth" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845331/Luz_1_a3qn79.png"
             alt="" srcset=""> -->
 
-            
-            <div class="title_box">
-                <img class="logo"
-                    src="https://res.cloudinary.com/dcyrneauz/image/upload/v1721845211/Football_Studio_2_csc0pj.png" alt=""
-                    srcset="">
 
-                <h1 class="title">Ranking Oficial Sniper: Veja os Líderes do Torneio na Jornada a R$5.000!</h1>
-            </div>
+        <h3>Ranking Oficial do Torneio</h3>
+        <h1 class="title">"Rumo ao Céu com Aviator”</h1>
+        <h3>Veja os Líderes na Jornada a R$5.000!</h3>
+       <form class="input_box">
+        <p>Descubra sua posição do RANKING</p>
+        <div class="submit_box">
 
+            <input type="email" placeholder="Digite seu email da sortenabet aqui">
+          <button type="button">Pesquisar</button>
+        </div>
+    </form>
+       
         <div class="ranking">
 
 
         </div>
 
         <footer>
-            <img  class="taca"src="https://res.cloudinary.com/dcyrneauz/image/upload/v1723749200/GOL_DE_OURO_1_thdjzv.png" alt="" srcset="">
-           <div class="content">
 
-               <h4>O torneio vai até 25/08.
-               </h4>
-               <h3>Continue jogando e mantenha-se no topo para garantir sua vitória!</h3>
-           </div>
+            <h3><span class="date">O torneio vai até 25/08.</span> Continue jogando e mantenha-se no topo para garantir
+                sua vitória!</h3>
+                <img class="taca" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1723814695/Avi%C3%A3o_xbkou3.png" alt="" srcset="">
         </footer>
-
     </main>
 
     <script>
-        const baseUrl = 'https://n8n.sortenabetferramentas.online/webhook/af332b5d-a542-47fa-b781-6bc5e877bdd5'
+        const baseUrl = 'https://n8n.sortenabetferramentas.online/webhook/8c1be377-8df3-404c-8171-maria'
 
         const requestHeaders = {
             'Content-Type': 'application/json',
@@ -298,18 +344,18 @@ footer h3{
             playerValue.classList.add("value")
 
             if (position == 1) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933075/Ouro_xircjq.png"
+                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814648/OURO_ltzpyf.png"
                 imgContainer.appendChild(playerImg)
             }
             else if (position == 2) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933247/Prata_ucucwb.png"
+                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814660/PRATA_ndbmj3.png"
                 imgContainer.appendChild(playerImg)
             }
             else if (position == 3) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933366/Bronze_byixfi.png"
+                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814678/BRONZE_jlbj0r.png"
                 imgContainer.appendChild(playerImg)
             }
-         
+
             else (
                 imgContainer.innerText = `${position}º`
             )
@@ -321,24 +367,67 @@ footer h3{
             return players
         }
 
-        const renderPlayer = async () => {
+        const renderPlayer = async (first,array=[]) => {
             const ranking = document.querySelector(".ranking")
 
-            ranking.innerHTML=" <h4 class='load'>Carregando...</h4>"
+            ranking.innerHTML = " <h4 class='load'>Carregando...</h4>"
 
             const rankings = await getRankings()
 
-                
-            ranking.innerHTML=''
+
+            ranking.innerHTML = ''
+            if(first){
+
                 rankings.forEach((e, index) => {
-                    const position = index + 1
-                    const player = createRanking(e, position)
-                    ranking.appendChild(player)
+                    const position = e.position
+                    if (e.position <= 10) {
+                        const player = createRanking(e, position)
+                        ranking.appendChild(player)
+                    }
                     
                 });
             }
 
-         renderPlayer()
+            else{
+                array.forEach((e, index) => {
+                    const position = e.position
+                    if (e.position <= 10) {
+                        const player = createRanking(e, position)
+                        ranking.appendChild(player)
+                    }
+                    
+                });
+            }
+        }
+
+        renderPlayer(true)
+
+        const filterRanking=()=>{
+            const userEmail=document.querySelector("input")
+       const btnSubmit=document.querySelector('button')
+       array=[]
+       btnSubmit.addEventListener("click",async()=>{
+        const rankings = await fetch(`https://n8n.sortenabetferramentas.online/webhook/15af85e6-1781-get-user?email=${userEmail.value}`, {
+                method: 'GET',
+                headers: requestHeaders,
+
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        response.json().then(respError => {
+                            alert(`${respError.message}`)
+                        })
+                    }
+                })
+array.push(rankings)
+
+renderPlayer(false,array)
+            return rankings       })
+        }
+
+        filterRanking()
     </script>
 
 </body>
