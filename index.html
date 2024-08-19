@@ -23,7 +23,7 @@
             background-color: #000000;
             display: flex;
             height: 100vh;
-            background-image: url('https://res.cloudinary.com/dcyrneauz/image/upload/v1723811917/IMG_Fundo_17_l4y6tm.png');
+            background-image: url('https://res.cloudinary.com/dcyrneauz/image/upload/v1724029774/IMG_FUNDO_cudnwi.png');
             background-position: center;
             background-size: cover;
             color: #D4D4D4;
@@ -36,21 +36,24 @@
             width: 100%;
             padding: 20px 0;
             max-width: 1062px;
-            position: relative;
             margin: 0 auto;
             gap: 20px;
 
         }
 
         .title {
-            font-family: Bree, sans-serif;
+            font-family: poppins, sans-serif;
             text-transform: uppercase;
-            font-weight: 700;
-            color: #FFD230;
+            font-weight: 800;
+            color: #00004A;
             font-size: 1.45rem;
             text-align: center;
             align-self: center;
             font-style: italic;
+            background-color:#D4D4D4;
+            padding: 20px 30px;
+            border-radius: 12px;
+            
 
         }
 
@@ -67,8 +70,8 @@
             padding: 10px 5px;
             width: 260px;
             border-radius: 12px 0 0 12px;
-            border: 1px solid #E50539;
-            background-color: #0C0C0C;
+            border: 1px solid #D4D4D4;
+            background-color: #00004A;
             color: #D4D4D4;
             max-width: 100%;
         }
@@ -87,13 +90,13 @@
         }
 
         button {
-            background-color: #E50539;
+            background-color: #D4D4D4;
             padding: 10px;
             border-radius: 0 12px 12px 0;
             display: flex;
             align-items: center;
-            border: 1px solid #E50539;
-            color: #EDEDED;
+            border: 1px solid#D4D4D4;
+            color:#00004A;
             cursor: pointer;
         }
 
@@ -106,48 +109,48 @@
             width: 90%;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 3px;
             max-width: 730px;
         }
 
         .players {
             width: 100%;
             max-width: 100%;
-            border-radius: 50px;
-            height: 47px;
+            border-radius: 5px;
+            /* height: 47px; */
             display: flex;
             align-items: center;
             position: relative;
             color: #EDEDED;
-            background: #0C0C0C;
+            background: #00004A;
             justify-content: space-between;
+            gap: 5px;
 
         }
 
         .img_box {
-            width: 45px;
+            width: 100px;
             height: 45px;
-            background-color: #E50539;
+            background-color: #D4D4D4;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
             font-weight: 800;
-            color: #D4D4D4;
-            border-radius: 50px;
-            margin: 3px;
+            color: #00004A;
+            border-radius: 5px;
+          padding: 5px;
         }
 
         .value {
-
-            background-color: #E50539;
             width: 20%;
             height: 40px;
-            border-radius: 50px;
             display: flex;
             align-items: center;
             padding: 5px;
-
+            justify-content: center;
+            border-left: 5px solid #001E68;
+border-left-style: groove;
         }
 
 
@@ -189,16 +192,27 @@
         }
 
         footer {
-            border-radius: 0 0 20px 20px;
-            width: 100%;
-            height: 115px;
+            border-radius: 5px;
+            width: 50%;
+            max-width: 730px;
+
             display: flex;
             align-items: center;
             justify-content: center;
             box-sizing: content-box;
             gap: 10px;
-            color: #EDEDED;
+            color: #00004A;
+            align-self: self-start;
+            justify-self: flex-end;
+            background-color: #D4D4D4;
+            flex-direction: column;
             position: relative;
+        }
+        @media(min-width:1050px){
+            footer{
+                align-self: center;
+                width: 90%;
+            }
         }
 
         footer h4 {
@@ -212,6 +226,7 @@
             font-weight: 600;
             font-size: 1rem;
             text-align: center;
+            font-style: italic;
         }
 
         .date {
@@ -258,17 +273,22 @@
 
         .taca {
 
-            max-width: 183px;
+            max-width: 225.55px;
             position: absolute;
-            left: -40px;
-            bottom: -45px;
+          right: -190px;
+            bottom: -50px;
         }
 
-        @media(min-width:950px) {
+        @media(min-width:709px) {
             .taca {
-                max-width: 285px;
-                left: -100px;
+                max-width: 400px;
                 bottom: 0;
+                right: 0px;
+            }
+
+            footer{
+                padding: 20px;
+                position: static;
             }
         }
 
@@ -296,6 +316,10 @@
             height: 100%;
             border-radius: 0 50px 50px 0;
         }
+
+        .par{
+            background-color:#000032;
+        }
     </style>
 </head>
 
@@ -310,8 +334,8 @@
             alt="" srcset=""> -->
 
 
-        <h3>Ranking Oficial do Torneio</h3>
-        <h1 class="title">"Rumo ao Céu com Aviator”</h1>
+        <h3>Ranking Oficial da</h3>
+        <h1 class="title">CHAMPIONS LEAGUE DO LUKETA</h1>
         <h3>Veja os Líderes na Jornada a R$5.000!</h3>
         <form class="input_box">
             <p>Descubra sua posição do RANKING</p>
@@ -329,9 +353,9 @@
 
         <footer>
 
-            <h3><span class="date">O torneio vai até 25/08.</span> Continue jogando e mantenha-se no topo para garantir
+            <h4>O torneio vai até 25/08.</h4><h3> Continue jogando e mantenha-se no topo para garantir
                 sua vitória!</h3>
-            <img class="taca" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1723814695/Avi%C3%A3o_xbkou3.png"
+            <img class="taca" src="https://res.cloudinary.com/dcyrneauz/image/upload/v1724031853/trof%C3%A9uroleta_1_l2xj8v.png"
                 alt="" srcset="">
         </footer>
     </main>
@@ -378,6 +402,10 @@
             playerValue.classList.add("value")
             playerBox.classList.add('box')
 
+            if(position%2==0){
+                players.classList.add('par')
+            }
+
 
             const not_btn = document.createElement('button')
             not_btn.innerText = 'Voltar'
@@ -404,15 +432,15 @@
 
 
             if (position == 1 && first) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814648/OURO_ltzpyf.png"
+                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1724085406/Ouro_1_ok7zn4.png"
                 imgContainer.appendChild(playerImg)
             }
             else if (position == 2 && first) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814660/PRATA_ndbmj3.png"
+                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1724085524/Prata_1_xt29bz.png"
                 imgContainer.appendChild(playerImg)
             }
             else if (position == 3 && first) {
-                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1723814678/BRONZE_jlbj0r.png"
+                playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1724085609/Bronze_1_zvz0qk.png"
                 imgContainer.appendChild(playerImg)
             }
 
