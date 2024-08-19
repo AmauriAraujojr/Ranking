@@ -260,7 +260,7 @@ footer h3{
     </main>
 
     <script>
-        const baseUrl = 'https://n8n.sortenabetferramentas.online/webhook/af332b5d-a542-47fa-b781-6bc5e877bdd5'
+        const baseUrl = 'https://n8n.sortenabetferramentas.online/webhook/8c1be377-8df3-404c-8171-maria'
 
         const requestHeaders = {
             'Content-Type': 'application/json',
@@ -285,27 +285,50 @@ footer h3{
 
         }
 
-        const createRanking = (ranking, position) => {
+        const createRanking = (ranking, position,first) => {
             const players = document.createElement("div")
             const imgContainer = document.createElement("div")
             const playerImg = document.createElement("img")
             const playerName = document.createElement("h4")
             const playerValue = document.createElement("h4")
+            const playerBox = document.createElement('div')
 
             players.classList.add("players")
             imgContainer.classList.add("img_box")
             playerName.classList.add("name")
             playerValue.classList.add("value")
+            playerBox.classList.add('box')
 
-            if (position == 1) {
+            const not_btn = document.createElement('button')
+    not_btn.innerText = 'Voltar'
+    not_btn.classList.add("btn_back")
+
+    if (ranking.message) {
+        const not_box = document.createElement('div')
+        const not_msg = document.createElement('h3')
+
+        not_msg.innerText = ranking.message
+
+        not_box.classList.add("notFound_container")
+
+        not_box.append(not_msg, not_btn)
+
+        players.append(not_box)
+
+
+        return players
+    }
+
+
+            if (position == 1 && first) {
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933075/Ouro_xircjq.png"
                 imgContainer.appendChild(playerImg)
             }
-            else if (position == 2) {
+            else if (position == 2 && first) {
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933247/Prata_ucucwb.png"
                 imgContainer.appendChild(playerImg)
             }
-            else if (position == 3) {
+            else if (position == 3 && first) {
                 playerImg.src = "https://res.cloudinary.com/dcyrneauz/image/upload/v1721933366/Bronze_byixfi.png"
                 imgContainer.appendChild(playerImg)
             }
@@ -316,29 +339,97 @@ footer h3{
             playerName.innerText = ranking.nome
             playerValue.innerText = `R$ ${ranking.total_deposit}`
 
-            players.append(imgContainer, playerName, playerValue)
+            playerBox.append(imgContainer, playerName)
+    players.append(playerBox, playerValue)
 
+    if (!first) {
+        players.append(not_btn)
+    }
             return players
         }
 
-        const renderPlayer = async () => {
-            const ranking = document.querySelector(".ranking")
+        const renderPlayer = async (first, array = []) => {
+    const ranking = document.querySelector(".ranking")
 
-            ranking.innerHTML=" <h4 class='load'>Carregando...</h4>"
+    ranking.innerHTML = " <h4 class='load'>Carregando...</h4>"
 
-            const rankings = await getRankings()
+    const rankings = await getRankings()
 
-                
-            ranking.innerHTML=''
-                rankings.forEach((e, index) => {
-                    const position = index + 1
-                    const player = createRanking(e, position)
-                    ranking.appendChild(player)
-                    
-                });
+    ranking.innerHTML = ""
+
+    if (first) {
+        rankings.forEach((e, index) => {
+            const position = e.position
+            if (e.position <= 10) {
+                const player = createRanking(e, position, first)
+                ranking.appendChild(player)
             }
 
-         renderPlayer()
+        });
+    }
+
+    else {
+
+        array.forEach((e, index) => {
+            const position = e.position
+            const player = createRanking(e, position, false)
+            ranking.appendChild(player)
+
+
+        });
+        array.shift()
+    }
+    renderBtn()
+}
+
+
+
+         renderPlayer(true)
+
+         const filterRanking = () => {
+    const userEmail = document.querySelector("input")
+    const btnSubmit = document.querySelector('button')
+    array = []
+
+
+    btnSubmit.addEventListener("click", async () => {
+        const rankings = await fetch(`https://n8n.sortenabetferramentas.online/webhook/15af85e6-1781-get-user?email=${userEmail.value}`, {
+            method: 'GET',
+            headers: requestHeaders,
+
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    response.json().then(respError => {
+                        alert(`${respError.message}`)
+                    })
+                }
+            })
+
+
+        if (array.length < 1) {
+            array.push(rankings)
+        }
+
+
+        renderPlayer(false, array)
+
+    })
+}
+
+filterRanking()
+
+
+         const renderBtn = () => {
+    const btn = document.querySelector(".btn_back")
+    if (btn) {
+        btn.addEventListener('click', () => {
+            renderPlayer(true)
+        })
+    }
+}
     </script>
 
 </body>
