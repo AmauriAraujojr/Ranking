@@ -68,6 +68,7 @@ border-radius: 15px;
             display: flex;
             align-items: center;
             position: relative;
+            justify-content: space-between;
             gap: 30px;
             color: #EDEDED;
             background: radial-gradient(#17347A 2%, #000000 75%);
@@ -83,13 +84,14 @@ border-radius: 15px;
             font-size: 20px;
             font-weight: 800;
             color:#D4D4D4;
-            border-radius: 15px 0 0 15px;
+            border-radius: 15px ;
+            padding: 5px;
+
         }
 
         .value {
-            position: absolute;
-            right: 15px;
 
+            width: 70px;
         }
 
         .center_ligth {
@@ -100,6 +102,66 @@ border-radius: 15px;
 
 
         }
+
+        .box {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .btn_back {
+            height: 100%;
+            border-radius:12px;
+        }
+
+.input_box {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 730px;
+            align-items: center;
+        }
+
+        input {
+            padding: 10px 5px;
+            width: 260px;
+            border-radius: 12px 0 0 12px;
+            border: 1px solid #D4D4D4;
+            background-color: #00004A;
+            color: #D4D4D4;
+            max-width: 100%;
+        }
+
+        input::placeholder {
+            color: #D4D4D4;
+        }
+
+        input:focus {
+            outline: none;
+
+        }
+
+        input:focus::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        button {
+            background-color: #D4D4D4;
+            padding: 10px;
+            border-radius: 0 12px 12px 0;
+            display: flex;
+            align-items: center;
+            border: 1px solid#D4D4D4;
+            color:#00004A;
+            cursor: pointer;
+        }
+
+        .submit_box {
+            display: flex;
+            max-width: 100%;
+        }
+
 
         .left_ligth {
             position: absolute;
@@ -220,6 +282,13 @@ footer h3{
                 bottom: 0px;
             }
         }
+
+        .notFound_container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -241,7 +310,15 @@ footer h3{
 
                 <h1 class="title">Ranking Oficial Sniper: Veja os Líderes do Torneio na Jornada a R$5.000!</h1>
             </div>
-
+            <form class="input_box">
+                <p>Descubra sua posição do RANKING</p>
+                <div class="submit_box">
+    
+                    <input type="email" placeholder="Digite seu email da sortenabet aqui">
+                    <button type="button">Pesquisar</button>
+                </div>
+            </form>
+    
         <div class="ranking">
 
 
